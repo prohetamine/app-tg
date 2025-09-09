@@ -1269,7 +1269,10 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   justify-content: center;
   align-items: center;
   @media (max-width: 1000px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `,Header=dt.div`
   height: 70px;
@@ -1295,14 +1298,20 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   color: #E5E5EA;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, Tahoma, Verdana, sans-serif;
 `,GameMainOverflow=dt.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   border-radius: 10px;
   overflow: hidden;
   font-size: 0px;
   @media (max-width: 1000px) {
     flex-direction: column;
-    border-radius: 0;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 820px) {
+    border-radius: 0px;
   }
 `,GameContainer=dt.div`
   position: relative;
@@ -1317,6 +1326,11 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   background: #dadadaff;
 
   @media (max-width: 1000px) {
+    width: 50vw;
+    height: calc(50vw * 1.2);
+  }
+
+  @media (max-width: 820px) {
     width: 100vw;
     height: calc(100vw * 1.2);
   }
@@ -1333,6 +1347,11 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   top: 0px;
 
   @media (max-width: 1000px) {
+    width: 50vw;
+    height: calc(50vw * 1.2);
+  }
+
+  @media (max-width: 820px) {
     width: 100vw;
     height: calc(100vw * 1.2);
   }
@@ -1343,6 +1362,11 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   cursor: url(${r=>r.isActive?cursor:noCursor}) 0 0, default;
 
   @media (max-width: 1000px) {
+    width: calc(50vw / 5);
+    height: calc(50vw * 1.2 / 6);
+  }
+
+  @media (max-width: 820px) {
     width: calc(100vw / 5);
     height: calc(100vw * 1.2 / 6);
   }
@@ -1354,6 +1378,11 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   background-size: cover;
 
   @media (max-width: 1000px) {
+    width: calc(50vw / 5);
+    height: calc(50vw * 1.2 / 6);
+  }
+
+  @media (max-width: 820px) {
     width: calc(100vw / 5);
     height: calc(100vw * 1.2 / 6);
   }
@@ -1370,6 +1399,11 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   }
 
   @media (max-width: 1000px) {
+    width: calc(50vw / 5);
+    height: calc(50vw * 1.2 / 6);
+  }
+
+  @media (max-width: 820px) {
     width: calc(100vw / 5);
     height: calc(100vw * 1.2 / 6);
   }
@@ -1383,6 +1417,13 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   top: 0;
 
   @media (max-width: 1000px) {
+    width: calc(50vw / 5);
+    height: calc(50vw / 5);
+    left: 0; 
+    top: 0;
+  }
+
+  @media (max-width: 820px) {
     width: calc(100vw / 5);
     height: calc(100vw / 5);
     left: 0; 
@@ -1398,6 +1439,13 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   top: 0;
 
   @media (max-width: 1000px) {
+    width: calc(50vw / 5);
+    height: calc(50vw / 5);
+    left: 0; 
+    top: 0;
+  }
+
+  @media (max-width: 820px) {
     width: calc(100vw / 5);
     height: calc(100vw / 5);
     left: 0; 
@@ -1405,14 +1453,24 @@ https://github.com/browserify/crypto-browserify`)},cryptoBrowserify.constants={D
   }
 `,GameNavigation=dt.div`
   min-width: 420px;
-  max-width: 100%;
-  width: 100%;
   height: 576px;
   background: #333;
   box-sizing: border-box;
   background-image: linear-gradient(180deg, rgba(56, 56, 56, 1) 0%,rgba(72, 134, 51, 1) 100%);
   padding: 30px;
   position: relative;
+
+  @media (max-width: 1000px) {
+    min-width: 50vw;
+    max-width: auto;
+    width: auto;
+  }
+
+  @media (max-width: 820px) {
+    min-width: 100vw;
+    max-width: auto;
+    width: auto;
+  }
 `,GamePixelBackground=dt.div`
   width: 100%;
   height: 273px;
