@@ -1,0 +1,1 @@
+body,#root{margin:0;min-width:320px;width:100%;background-color:#444;background-image:url(/assets/background-D16TpqIO.png);background-size:cover}.blink{animation:blinker 1s linear infinite}@keyframes blinker{50%{opacity:.5}}::-webkit-scrollbar{width:0px}
