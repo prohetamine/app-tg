@@ -1,0 +1,1 @@
+body,#root{margin:0;min-width:320px;width:100%}.blink{animation:blinker 1s linear infinite}@keyframes blinker{50%{opacity:.5}}::-webkit-scrollbar{width:0px}
