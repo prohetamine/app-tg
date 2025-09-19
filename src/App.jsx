@@ -21,7 +21,7 @@ const games = {
 
 const App = () => {
   const session = 'snake2'
-      , [gameId, setGameId] = useLocalStorageState(1, { defaultValue: 0.01 })
+      , [gameId, setGameId] = useLocalStorageState(1, { defaultValue: 1 })
       , [price, setPrice] = useLocalStorageState(0.01, { defaultValue: 0.01 })
 
   return (
