@@ -43,7 +43,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
       , [selectBlock, setSelectBlock] = useState(0)
 
   const trace = map.trace.slice(0, step)
-  
+
   useEffect(() => {
     setSelectBlock(trace.length - 1)
   }, [trace.length])
@@ -109,7 +109,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                   onMouseMove={() => console.log(key)}
                   cursor={key === map.trace[step-1] ? cursor.pointer : cursor.notAllowed}
                   key={key} 
-                  className={key === map.trace[step-1] ? 'blink' : ''}
+                  className={key === map.trace[selectBlock] ? 'blink' : ''}
                   style={{ opacity: trace.find(t => t === key) !== undefined ? 1 : 0.1 }}
                   onClick={
                     () => {
@@ -120,7 +120,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                   }
                 >
                   <GameBlock
-                    rotate={angles[key] || 0} 
+                    rotate={key === map.trace[step-1] ? (selectBlock === step-1 ? currentBlockBids[0]?.angle : angles[key]) : (angles[key] || 0)} 
                     src={images[chunk.image]}
                   />
                   {
@@ -141,7 +141,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                           : null
                   }
                   <GamePlaceBidBlock 
-                    isActive={key === map.trace[step-1]}
+                    active={(key === map.trace[step-1]).toString()}
                   />
                 </OverflowGameBlock>
               )
@@ -207,7 +207,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                         <NavigationRowOverflow key={key}>
                           <RowLink target='_blank' href={`https://tonviewer.com/${address}`}>{address.slice(0, 4)}...{address.slice(-4)}</RowLink>
                           <RowLink target='_blank' href={`https://tonviewer.com/transaction/${path}`}>{path.slice(0, 4)}...{path.slice(-4)}</RowLink>
-                          <AngleIcon line={isLine} color={angleWin ? '#47A82E' : '#A82E2E'} rotate={angle} />
+                          <AngleIcon line={isLine.toString()} color={angleWin ? '#47A82E' : '#A82E2E'} rotate={angle} />
                         </NavigationRowOverflow>
                       )
                     })

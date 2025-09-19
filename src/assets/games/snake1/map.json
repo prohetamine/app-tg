@@ -41,7 +41,7 @@
     "image": "angle",
     "bonus": 1
   }, {
-    "rotate": -90,
+    "rotate": 270,
     "image": "angle"
   }, {
     "rotate": 90,
@@ -51,19 +51,19 @@
     "image": "empty",
     "isShow": true
   }, {
-    "rotate": -90,
+    "rotate": 270,
     "image": "angle"
   }, {
-    "rotate": 360,
+    "rotate": 0,
     "image": "angle"
   }, {
     "rotate": 0,
     "image": "line"
   }, {
-    "rotate": -90,
+    "rotate": 270,
     "image": "angle"
   }, {
-    "rotate": 360,
+    "rotate": 0,
     "image": "angle"
   }, {
     "rotate": 0,

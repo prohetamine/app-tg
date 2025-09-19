@@ -154,7 +154,7 @@ const GamePlaceBidBlock = styled.div`
   z-index: 8;
 
   &:hover {
-    box-shadow: ${props => props.isActive ? `inset 0px 0px 10px 10px #514526` : `inset 0px 0px 10px 10px #51452600`};
+    box-shadow: ${props => props.active === 'true' ? `inset 0px 0px 10px 10px #514526` : `inset 0px 0px 10px 10px #51452600`};
   }
 
   @media (max-width: 1000px) {
@@ -330,7 +330,7 @@ const RowLink = styled.a`
 const AngleIcon = styled.div`
   width: 21px;
   height: 21px;
-  background-image: url(${props => props.line ? lineIcon : angleIcon});
+  background-image: url(${props => props.line === 'true' ? lineIcon : angleIcon});
   transform: rotate(${props => props.rotate}deg);
   background-size: cover;
   background-color: ${props => props.color};

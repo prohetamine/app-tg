@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
+import useLocalStorageState from 'use-local-storage-state'
 import { TonConnectButton } from '@tonconnect/ui-react'
 import Select from './components/Select.jsx'
 import Game from './components/Game.jsx'
@@ -20,8 +21,8 @@ const games = {
 
 const App = () => {
   const session = 'snake2'
-      , [gameId, setGameId] = useState(1)
-      , [price, setPrice] = useState(0.01)
+      , [gameId, setGameId] = useLocalStorageState(1, { defaultValue: 0.01 })
+      , [price, setPrice] = useLocalStorageState(0.01, { defaultValue: 0.01 })
 
   return (
     <Body>

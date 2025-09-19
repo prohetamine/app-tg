@@ -29,10 +29,6 @@ const loadData = async () => {
         
         if (type === 'app' && blockIndex !== undefined && !!toNano(price)) {
           if (!(global || window).used[path]) {
-            console.log(comment)
-          }
-
-          if (!(global || window).used[path]) {
             ;(global || window).used[path] = true
             ;(global || window).LOADDATA = [
               ...(global || window).LOADDATA, 
