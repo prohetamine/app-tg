@@ -15,7 +15,7 @@ const useData = ({ map, session, price }) => {
       const data = window.LOADDATA || []
 
       for (let x = 0; x < data.length; x++) {
-        const { type, session: _session, blockIndex, trace, price: _price, randNumber, path, address, created_lt } = data[x]
+        const { type, session: _session, source, blockIndex, trace, price: _price, randNumber, path, address, created_lt } = data[x]
 
         if (
           type === 'app' && 
@@ -36,6 +36,7 @@ const useData = ({ map, session, price }) => {
             { 
               path,
               address, 
+              source,
               angle: ((map.schema[blockIndex].rotate - 90) + (angle * 90)), 
               isLine: map.schema[blockIndex]?.image === 'line',
               angleWin: isExistWinner && mathAngle === map.schema[blockIndex]?.rotate,

@@ -217,10 +217,10 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
               {
                 currentBlockBids.length > 0
                   ? (
-                    currentBlockBids.map(({ angle, path, address, angleWin, isLine }, key) => {
+                    currentBlockBids.map(({ angle, path, address, source, angleWin, isLine }, key) => {
                       return (
                         <NavigationRowOverflow key={key}>
-                          <RowLink target='_blank' href={`https://tonviewer.com/${address}`}>{address.slice(0, 4)}...{address.slice(-4)}</RowLink>
+                          <RowLink style={{ color: tonConnectUI.wallet?.account?.address === source ? '#94ff60' : 'white' }} target='_blank' href={`https://tonviewer.com/${address}`}>{tonConnectUI.wallet?.account?.address === source ? 'YOU' : `${address.slice(0, 4)}...${address.slice(-4)}`}</RowLink>
                           <RowLink target='_blank' href={`https://tonviewer.com/transaction/${path}`}>{path.slice(0, 4)}...{path.slice(-4)}</RowLink>
                           <AngleIcon line={isLine.toString()} color={angleWin ? '#47A82E' : '#A82E2E'} rotate={angle} />
                         </NavigationRowOverflow>
