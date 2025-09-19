@@ -4,6 +4,7 @@ import arrow from '../assets/arrow.png'
 import useData from '../hooks/use-data'
 import placeBid from '../fun/place-bid'
 import mathPrize from '../lib/math-prize'
+import { motion } from "motion/react"
 
 import { 
   GameMainOverflow,
@@ -41,6 +42,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
   const [tonConnectUI] = useTonConnectUI()
       , [step, angles, transactions] = useData({ map, session, price })
       , [selectBlock, setSelectBlock] = useState(0)
+      , [update, setUpdate] = useState(0)
 
   const trace = map.trace.slice(0, step)
 
@@ -62,6 +64,12 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
       , ratio = 1.5
 
   const currentPrize = mathPrize(currentBlockBids.length, price, ratio, bonusRatio, 10)
+
+  useEffect(() => {
+    setInterval(() => {
+      setUpdate(window.ldx)
+    }, 1000)
+  }, [])
 
   return (
     <GameMainOverflow>
@@ -185,7 +193,45 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
             </WrapperNavigationBlockButton>
           </NavigationTopOverflow>
           <NavigationOverflow>
-            <NavigationBlockMiddleTitle>Bids history</NavigationBlockMiddleTitle>
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+              <NavigationBlockMiddleTitle>Bids history</NavigationBlockMiddleTitle>
+                <motion.svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    initial="hidden"
+                    animate="visible"
+                    className={'spinner'}
+                >
+                  <motion.circle
+                      className="circle-path"
+                      cx="12.5"
+                      cy="12.5"
+                      r="8"
+                      strokeWidth={4.5}
+                      stroke="#fff"
+                      fill='#ffffff00'
+                      strokeLinecap="round"
+                      variants={
+                        {
+                          hidden: {
+                            pathLength: 0,
+                            transition: {
+                              pathLength: { delay: 0, type: 'tween', duration: 0, bounce: 0 },
+                            },
+                          },
+                          visible: {
+                            pathLength: update,
+                            transition: {
+                              pathLength: { delay: 0, type: 'tween', duration: 1, bounce: 0 },
+                            },
+                          } 
+                        }
+                      }
+                      style={{}}
+                  />
+              </motion.svg>
+            </div>
             <NavigationBidsTitleOverflow>
               <RowText>FROM</RowText>
               <RowText>Tx Hash</RowText>
