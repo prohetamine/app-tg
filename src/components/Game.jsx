@@ -53,9 +53,10 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
   }, [trace.length])
 
   useEffect(() => {
-    const root = document.querySelector('body')
+    const root = document.querySelector('html')
     root.style.backgroundImage = `url('${background}')`
-    root.style.backgroundSize = 'cover'
+    root.style.backgroundSize = '500%'
+    root.style.backgroundPosition = 'center center'
   }, [background])
 
   const localTransactionHash = `${trace[selectBlock]}-${map.trace.join('').trim()}-${price}-${session}`
