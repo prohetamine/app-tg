@@ -1,15 +1,15 @@
 {
   "schema": [{
-    "rotate": 90,
+    "rotate": 270,
     "image": "line"
   }, {
-    "rotate": 90,
+    "rotate": 270,
     "image": "line"
   }, {
-    "rotate": 90,
+    "rotate": 270,
     "image": "line"
   }, {
-    "rotate": 90,
+    "rotate": 270,
     "image": "line"
   }, {
     "rotate": 0,
@@ -18,17 +18,65 @@
     "rotate": 270,
     "image": "angle"
   }, {
-    "rotate": 90,
+    "rotate": 270,
+    "image": "line",
+    "bonus": 0
+  }, {
+    "rotate": 270,
     "image": "line"
   }, {
-    "rotate": 90,
+    "rotate": 0,
+    "image": "angle",
+    "bonus": 0
+  }, {
+    "rotate": 0,
     "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 270,
+    "image": "angle",
+    "bonus": 1
+  }, {
+    "rotate": 0,
+    "image": "angle"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 0,
+    "image": "line"
+  }, {
+    "rotate": 180,
+    "image": "angle"
   }, {
     "rotate": 90,
     "image": "line"
   }, {
     "rotate": 90,
     "image": "angle"
+  }, {
+    "rotate": 0,
+    "image": "line"
   }, {
     "rotate": 180,
     "image": "angle"
@@ -42,63 +90,8 @@
     "rotate": 90,
     "image": "line"
   }, {
-    "rotate": 0,
-    "image": "angle"
-  }, {
-    "rotate": 270,
-    "image": "angle"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
     "rotate": 90,
     "image": "angle"
-  }, {
-    "rotate": 0,
-    "image": "line"
-  }, {
-    "rotate": 0,
-    "image": "empty",
-    "isShow": true
-  }, {
-    "rotate": 0,
-    "image": "empty",
-    "isShow": true
-  }, {
-    "rotate": 0,
-    "image": "empty",
-    "isShow": true
-  }, {
-    "rotate": 0,
-    "image": "empty",
-    "isShow": true
-  }, {
-    "rotate": 180,
-    "image": "angle"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
-    "rotate": 90,
-    "image": "line"
-  }, {
-    "rotate": 90,
-    "image": "line"
   }],
-  "trace": [
-    0, 1, 2, 3, 4, 
-    9, 8, 7, 6, 5, 
-    10, 11, 12, 13, 14, 
-    19, 18, 17, 16, 15, 
-    20, 25, 26, 27, 28, 29
-  ]
+  "trace": [0, 1, 2, 3, 4, 9, 14, 19, 24, 29, 28, 27, 26, 25, 20, 15, 10, 5, 6, 7, 8, 13, 18, 23, 22, 21, 16, 11, 12, 17]
 }

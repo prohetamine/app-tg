@@ -228,7 +228,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                     })
                   )
                   : (
-                    <RowText style={{ width: 'auto', color: '#ccc' }}>Not found</RowText>
+                    <RowText style={{ width: 'auto', color: '#ccc' }}>Not found bids</RowText>
                   )
               }
             </NavigationBidsRowsOverflow>

@@ -5,7 +5,7 @@ import apple from './bonus/apple.png'
 import apple2 from './bonus/apple2.png'
 import pointer from './cursor/pointer.png'
 import notAllowed from './cursor/not-allowed.png'
-import player from './snake.png'
+import player from './player.png'
 import background from './background.png'
 import map from './map.json'
 

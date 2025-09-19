@@ -7,14 +7,14 @@ import Game from './components/Game.jsx'
 import allowRequestApi from './lib/allow-request-api.js'
 import { Body, Header } from './styled/index.jsx'
 
-import snake1 from './assets/games/snake1'
-import snake2 from './assets/games/snake2'
-import snake3 from './assets/games/snake3'
+import snake1 from './assets/games/snake1/index.js'
+import snake2 from './assets/games/snake2/index.js'
+import fish1 from './assets/games/fish1/index.js'
 
 const games = {
   '1': snake1,
   '2': snake2,
-  '3': snake3,
+  '3': fish1,
 }
 
 // стены
@@ -31,7 +31,7 @@ const App = () => {
           items={[
             { label: '🐍 #1', id: 1 },
             { label: '🐍 #2', id: 2 },
-            { label: '🐍 #3', id: 3 }
+            { label: '🐟 #1', id: 3 }
           ]} 
           value={gameId} 
           onChange={id => setGameId(id)}   
