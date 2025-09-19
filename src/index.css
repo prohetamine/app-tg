@@ -1,3 +1,7 @@
+body,html {
+  background-color: #121214;
+}
+
 body,#root {
   margin: 0;
   min-width: 320px;
