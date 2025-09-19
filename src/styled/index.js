@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import lineIcon from './../assets/line-icon.png'
 import angleIcon from './../assets/angle-icon.png'
 import pixelBackground from './../assets/pixel-background.png'
+import { motion } from "motion/react"
 
 const Body = styled.div`
   width: 100%;
@@ -270,11 +271,13 @@ const WrapperNavigationBlockButton = styled.div`
   width: 39px;
 `
 
-const NavigationBlockButton = styled.img`
+const NavigationBlockButton = styled(motion.button)`
   width: 16.13px;
   height: 17.7px;
   cursor: pointer;
   background-color: #ffffff00;
+  background-image: url(${props => props.src});
+  background-size: cover;
   border: none;
   box-sizing: border-box;
 `
@@ -407,7 +410,7 @@ const NavigationRowOverflow = styled.div`
   box-sizing: border-box;
 `
 
-const ButtonPlaceBid = styled.button`
+const ButtonPlaceBid = styled(motion.button)`
   width: 100%;
   height: 67.5px;
   background-color: rgba(148, 255, 96, 1.00);

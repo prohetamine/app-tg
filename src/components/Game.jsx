@@ -160,25 +160,27 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                 style={{ 
                   opacity: trace[selectBlock-1] !== undefined ? 1 : 0.5,
                   cursor: trace[selectBlock-1] !== undefined ? 'pointer' : 'not-allowed', 
-                }}   
+                }}
                 onClick={() => {
                   if (trace[selectBlock-1] !== undefined) {
                     setSelectBlock(s => s-1)
                   }
                 }}
+                whileTap={{ scale: 0.95 }}
               />
               <NavigationBlockButton 
                 src={arrow}
                 style={{ 
                   opacity: trace[selectBlock+1] !== undefined ? 1 : 0.5, 
-                  cursor: trace[selectBlock+1] !== undefined ? 'pointer' : 'not-allowed', 
-                  transform: 'rotate(180deg)' 
+                  cursor: trace[selectBlock+1] !== undefined ? 'pointer' : 'not-allowed'
                 }} 
                 onClick={() => {
                   if (trace[selectBlock+1] !== undefined) {
                     setSelectBlock(s => s+1)
                   }
                 }}
+                initial={{ transform: 'rotate(180deg)' }}
+                whileTap={{ scale: 0.95, transform: 'rotate(180deg)' }}
               />
             </WrapperNavigationBlockButton>
           </NavigationTopOverflow>
@@ -237,6 +239,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
             <ButtonPlaceBid
               style={trace[selectBlock] === trace[trace.length - 1] ? { filter: 'grayscale(0)', cursor: 'pointer' } : { filter: 'grayscale(1)', cursor: 'not-allowed' }}
               onClick={() => trace[selectBlock] === trace[trace.length - 1] ? placeBid(tonConnectUI, session, trace[trace.length-1], map, price) : null}
+              whileTap={{ scale: 0.95 }}
             >
               PLACE BID
             </ButtonPlaceBid>
