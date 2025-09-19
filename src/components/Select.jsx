@@ -3,7 +3,7 @@ import {
   Button,
   SelectBody,
   SelectMenu
-} from './../styled'
+} from './../styled/index.jsx'
 
 const Select = ({ items, value, onChange, style }) => {
   const [show, setShow] = useState(false)

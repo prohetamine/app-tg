@@ -447,6 +447,51 @@ const SelectMenu = styled.div`
   top: 50px;
 `
 
+const BidLoader = ({ progress }) => (
+  <motion.svg
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+    initial="hidden"
+    animate="visible"
+    className={'spinner'}
+  >
+    <motion.circle
+      className="circle-path"
+      cx="12.5"
+      cy="12.5"
+      r="8"
+      strokeWidth={4.5}
+      stroke="#fff"
+      fill='#ffffff00'
+      strokeLinecap="round"
+      variants={
+        {
+          hidden: {
+            pathLength: 0,
+            transition: {
+              pathLength: { delay: 0, type: 'tween', duration: 0, bounce: 0 },
+            },
+          },
+          visible: {
+            pathLength: progress,
+            transition: {
+              pathLength: { delay: 0, type: 'tween', duration: 1, bounce: 0 },
+            },
+          } 
+        }
+      }
+    />
+  </motion.svg>
+)
+
+const NavigationBlockMiddleOverflow = styled.div`
+  display: flex; 
+  width: 100%; 
+  justify-content: space-between; 
+  align-items: center;
+`
+
 export {
   Body,
   Header,
@@ -481,5 +526,7 @@ export {
   ButtonPlaceBid,
   RowText,
   RowLink,
-  AngleIcon
+  AngleIcon,
+  BidLoader,
+  NavigationBlockMiddleOverflow
 }

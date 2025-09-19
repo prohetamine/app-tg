@@ -35,14 +35,16 @@ import {
   ButtonPlaceBid,
   RowText,
   RowLink,
-  AngleIcon
-} from '../styled'
+  AngleIcon,
+  BidLoader,
+  NavigationBlockMiddleOverflow
+} from '../styled/index.jsx'
 
 const Game = ({ price, session, data: { images, map, player, bonus, cursor, background } }) => {
   const [tonConnectUI] = useTonConnectUI()
       , [step, angles, transactions] = useData({ map, session, price })
       , [selectBlock, setSelectBlock] = useState(0)
-      , [update, setUpdate] = useState(0)
+      , [loadProgress, setLoadProgress] = useState(0)
 
   const trace = map.trace.slice(0, step)
 
@@ -67,7 +69,7 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
 
   useEffect(() => {
     setInterval(() => {
-      setUpdate(window.ldx)
+      setLoadProgress(window.ldx)
     }, 1000)
   }, [])
 
@@ -188,50 +190,15 @@ const Game = ({ price, session, data: { images, map, player, bonus, cursor, back
                   }
                 }}
                 initial={{ transform: 'rotate(180deg)' }}
-                whileTap={{ scale: 0.95, transform: 'rotate(180deg)' }}
+                whileTap={{ transform: 'rotate(180deg) scale(0.95)' }}
               />
             </WrapperNavigationBlockButton>
           </NavigationTopOverflow>
           <NavigationOverflow>
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+            <NavigationBlockMiddleOverflow>
               <NavigationBlockMiddleTitle>Bids history</NavigationBlockMiddleTitle>
-                <motion.svg
-                    width="25"
-                    height="25"
-                    viewBox="0 0 25 25"
-                    initial="hidden"
-                    animate="visible"
-                    className={'spinner'}
-                >
-                  <motion.circle
-                      className="circle-path"
-                      cx="12.5"
-                      cy="12.5"
-                      r="8"
-                      strokeWidth={4.5}
-                      stroke="#fff"
-                      fill='#ffffff00'
-                      strokeLinecap="round"
-                      variants={
-                        {
-                          hidden: {
-                            pathLength: 0,
-                            transition: {
-                              pathLength: { delay: 0, type: 'tween', duration: 0, bounce: 0 },
-                            },
-                          },
-                          visible: {
-                            pathLength: update,
-                            transition: {
-                              pathLength: { delay: 0, type: 'tween', duration: 1, bounce: 0 },
-                            },
-                          } 
-                        }
-                      }
-                      style={{}}
-                  />
-              </motion.svg>
-            </div>
+              <BidLoader progress={loadProgress} />
+            </NavigationBlockMiddleOverflow>
             <NavigationBidsTitleOverflow>
               <RowText>FROM</RowText>
               <RowText>Tx Hash</RowText>

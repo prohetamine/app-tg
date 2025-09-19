@@ -12,7 +12,6 @@ const account = (new TonWeb.utils.Address('UQDfFfEGASoutjXnOmkXStp3SExrFvpLJv9Ho
 
 const loadData = async () => {
   for (let x = 0; x < 10; x++) {
-    ;(global || window).ldx = x / 10
     try {
       const { transactions } = await fetch(`https://toncenter.com/api/v3/transactions?account=${account}&limit=1000&offset=${x * 1000}`).then(e => e.json())
       const _transactions = transactions?.filter(data => data.in_msg && data.in_msg.value).filter(data => data.in_msg.value) || []
@@ -42,6 +41,7 @@ const loadData = async () => {
       for (;!(global || window).allowRequestAPI();) {
         await sleep(1000)
       }
+      ;(global || window).ldx = x / 10
     } catch (err) {
       console.log(err)
       for (;!(global || window).allowRequestAPI();) {

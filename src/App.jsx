@@ -5,7 +5,7 @@ import { TonConnectButton } from '@tonconnect/ui-react'
 import Select from './components/Select.jsx'
 import Game from './components/Game.jsx'
 import allowRequestApi from './lib/allow-request-api.js'
-import { Body, Header } from './styled'
+import { Body, Header } from './styled/index.jsx'
 
 import snake1 from './assets/games/snake1'
 import snake2 from './assets/games/snake2'
