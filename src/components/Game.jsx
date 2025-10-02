@@ -4,7 +4,6 @@ import arrow from '../assets/arrow.png'
 import useData from '../hooks/use-data'
 import placeBid from '../fun/place-bid'
 import mathPrize from '../lib/math-prize'
-import { motion } from "motion/react"
 
 import { 
   GameMainOverflow,
